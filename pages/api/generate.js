@@ -1,4 +1,6 @@
-// added 
+// prompt give me formulae and a short summary of the Topic. 
+// eg:
+// Topic : calculus 
 import { Configuration, OpenAIApi } from 'openai';
 
 const configuration = new Configuration({
@@ -10,19 +12,19 @@ const openai = new OpenAIApi(configuration);
 // addded more
 const basePromptPrefix =
 `
-give me ideas for a gtp-3 prompt base project based on this 
+give me formulae and a short summary of the Topic. 
 
-topic:
+Topic :
 `
 const generateAction = async (req, res) => {
   // Run first prompt
   console.log(`API: ${basePromptPrefix}${req.body.userInput}`)
 
   const baseCompletion = await openai.createCompletion({
-    model: 'text-davinci-002',
+    model: 'text-davinci-003',
     prompt: `${basePromptPrefix}${req.body.userInput}\n`,
-    temperature: 0.8,
-    max_tokens: 400,
+    temperature: 1,
+    max_tokens: 150,
   });
   
   const basePromptOutput = baseCompletion.data.choices.pop();

@@ -6,9 +6,6 @@ import buildspaceLogo from '../assets/buildspace-logo.png';
 // added webhook shit here
 import { useState } from 'react';
   const Home = () => {
-
-
-
   const [userInput, setUserInput] = useState('');
     
   const [apiOutput, setApiOutput] = useState('')
@@ -51,7 +48,7 @@ import { useState } from 'react';
             <h1>casca</h1>
           </div>
           <div className="header-subtitle">
-            <h2>The ultimate recommendation engine for teenagers: GPT-3!</h2>
+            <h2>your refrence guide for ANY topic</h2>
           </div>
         </div>
         {/* Add this code here*/}
@@ -90,7 +87,7 @@ import { useState } from 'react';
         >
           <div className="badge">
             <Image src={buildspaceLogo} alt="buildspace logo" />
-            <p>build with voidz</p>
+            <p>build with voidz and buildspace</p>
           </div>
         </a>
       </div>
